@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geocache Management</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #252525;
+            color: rgb(255, 255, 255);
+        }
+
+        header {
+            background-color: #558a55;
+            padding: 20px 0;
+            text-align: center;
+            color: #f7b87d;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        nav {
+            background-color: #5d9b5d;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: #ffffff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #4d6f4d;
+        }
+
+        nav a:nth-child(5) {
+            float: right;
+        }
+
+        section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .subpage {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+        .home-img{
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 50px;
+            margin-top: 55px;
+        }
+
+
+
+        button {
+            background-color: #558a55;
+            color: #ffffff;
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #4d6f4d;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Adopt a Geocache</h1>
+</header>
+
+<nav>
+    <a href="#home" onclick="showPage('homePage')">Home</a>
+    <a href="#view all" onclick="showPage('viewAllPage')">view all geocaches</a>
+    <a href="#upload" onclick="showPage('uploadPage')">Upload</a>
+    <a href="#news" onclick="showPage('newsPage')">News</a>
+    <a href="#account" onclick="showPage('accountPage')">Account</a>
+    <a href="#documentation" onclick="showPage('documentationPage')">Documentation</a>
+    
+
+</nav>
+
+<section id="homePage" class="subpage active">
+    <h2>Welcome to the "adopt a geocache" System!</h2>
+    <p>Discover the allure of geocaching: adopt hidden treasures with rich histories or share your own adventures by putting caches up for adoption!</p>
+    <img class="home-img" src="img/Background.jpg" alt="Geocache Image">
+</section>
+
+<section id="viewAllPage" class="subpage">
+    <h2>View all geocaches</h2>
+    <p>View all uploaded geocaches from the community.</p>
+</section>
+
+<section id="uploadPage" class="subpage">
+    <h2>Upload Geocache</h2>
+    <p>Share your geocaching discoveries with the community.</p>
+</section>
+
+<section id="accountPage" class="subpage">
+    <h2>User Account</h2>
+    <p>Welcome to your account page!</p>
+    <button onclick="loginWithGitHub()">Login with GitHub</button>
+    <div id="userData">
+        <!-- User data will be displayed here if logged in -->
+    </div>
+</section>
+
+<section id="newsPage" class="subpage">
+    <h2>Latest News</h2>
+    <p>Stay updated with the latest geocaching information.</p>
+</section>
+
+<section id="documentationPage" class="subpage">
+    <h2>Documentation</h2>
+    <p>Explore the documentation for our Geocache Management System.</p>
+</section>
+
+<script>
+    function showPage(pageId) {
+        var subpages = document.getElementsByClassName('subpage');
+        for (var i = 0; i < subpages.length; i++) {
+            subpages[i].classList.remove('active');
+        }
+        var selectedPage = document.getElementById(pageId);
+        selectedPage.classList.add('active');
+    }
+
+    function loginWithGitHub() {
+        alert("❗GitHub authentication: Not implemented yet (requires server-side logic).");
+    }
+</script>
+
+</body>
+</html>
