@@ -153,7 +153,7 @@
 
 <section id="viewAllPage" class="subpage">
     <h2>View All Geocaches</h2>
-    <p>Explore all geocaches uploaded by the community.</p>
+    <div id="geocacheList"></div>
 </section>
 
 <section id="uploadPage" class="subpage">
@@ -234,37 +234,36 @@
 </section>
 
 <script>
-    function uploadGeocache() {
-        // Sammle die Daten aus dem Formular
-        const geocacheData = {
-            geocacheName: document.getElementById('geocacheName').value,
-            geocacheCode: document.getElementById('geocacheCode').value,
-            location: document.getElementById('location').value,
-            coordinates: document.getElementById('coordinates').value,
-            size: document.getElementById('size').value,
-            difficulty: document.getElementById('difficulty').value,
-            terrain: document.getElementById('terrain').value,
-            link: document.getElementById('link').value,
-        };
+    function getAllGeocaches() {
+        fetch('/geocaches')
+            .then(response => response.json())
+            .then(data => {
+                const geocacheListDiv = document.getElementById('geocacheList');
+                geocacheListDiv.innerHTML = ''; // Leere die Liste, um Duplikate zu vermeiden
 
-        // Sende die Daten an das Backend
-        fetch('/upload', {  // Passe den Pfad entsprechend an
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(geocacheData),
-        })
-        .then(response => response.text())
-        .then(message => {
-            alert(message);
-            // Optional: Füge hier Logik hinzu, um die Seite zu aktualisieren oder weitere Aktionen durchzuführen
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            // Optional: Füge hier Logik hinzu, um Fehler zu behandeln
-        });
+                data.forEach(geocache => {
+                    const geocacheItem = document.createElement('div');
+                    geocacheItem.innerHTML = `
+                        <p><strong>Name:</strong> ${geocache.geocacheName}</p>
+                        <p><strong>Code:</strong> ${geocache.geocacheCode}</p>
+                        <p><strong>Location:</strong> ${geocache.location}</p>
+                        <p><strong>Coordinates:</strong> ${geocache.coordinates}</p>
+                        <p><strong>Size:</strong> ${geocache.size}</p>
+                        <p><strong>Difficulty:</strong> ${geocache.difficulty}</p>
+                        <p><strong>Terrain:</strong> ${geocache.terrain}</p>
+                        <p><strong>Link:</strong> ${geocache.link || 'Not provided'}</p>
+                        <hr>
+                    `;
+                    geocacheListDiv.appendChild(geocacheItem);
+                });
+            })
+            .catch(error => console.error('Error:', error));
     }
+
+    // Rufe beim Laden der Seite alle Geocaches ab und zeige sie an
+    window.onload = function () {
+        getAllGeocaches();
+    };
     function showPage(pageId) {
         var subpages = document.getElementsByClassName('subpage');
         for (var i = 0; i < subpages.length; i++) {
