@@ -234,6 +234,37 @@
 </section>
 
 <script>
+    function uploadGeocache() {
+        // Sammle die Daten aus dem Formular
+        const geocacheData = {
+            geocacheName: document.getElementById('geocacheName').value,
+            geocacheCode: document.getElementById('geocacheCode').value,
+            location: document.getElementById('location').value,
+            coordinates: document.getElementById('coordinates').value,
+            size: document.getElementById('size').value,
+            difficulty: document.getElementById('difficulty').value,
+            terrain: document.getElementById('terrain').value,
+            link: document.getElementById('link').value,
+        };
+
+        // Sende die Daten an das Backend
+        fetch('/upload', {  // Passe den Pfad entsprechend an
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(geocacheData),
+        })
+        .then(response => response.text())
+        .then(message => {
+            alert(message);
+            // Optional: Füge hier Logik hinzu, um die Seite zu aktualisieren oder weitere Aktionen durchzuführen
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            // Optional: Füge hier Logik hinzu, um Fehler zu behandeln
+        });
+    }
     function showPage(pageId) {
         var subpages = document.getElementsByClassName('subpage');
         for (var i = 0; i < subpages.length; i++) {
