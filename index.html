@@ -234,31 +234,32 @@
 </section>
 
 <script>
-    function getAllGeocaches() {
-        fetch('/geocaches')
-            .then(response => response.json())
-            .then(data => {
-                const geocacheListDiv = document.getElementById('geocacheList');
-                geocacheListDiv.innerHTML = ''; // Leere die Liste, um Duplikate zu vermeiden
+    function uploadGeocache() {
+    const geocacheData = {
+        geocacheName: document.getElementById('geocacheName').value,
+        geocacheCode: document.getElementById('geocacheCode').value,
+        location: document.getElementById('location').value,
+        coordinates: document.getElementById('coordinates').value,
+        size: document.getElementById('size').value,
+        difficulty: document.getElementById('difficulty').value,
+        terrain: document.getElementById('terrain').value,
+        link: document.getElementById('link').value,
+    };
 
-                data.forEach(geocache => {
-                    const geocacheItem = document.createElement('div');
-                    geocacheItem.innerHTML = `
-                        <p><strong>Name:</strong> ${geocache.geocacheName}</p>
-                        <p><strong>Code:</strong> ${geocache.geocacheCode}</p>
-                        <p><strong>Location:</strong> ${geocache.location}</p>
-                        <p><strong>Coordinates:</strong> ${geocache.coordinates}</p>
-                        <p><strong>Size:</strong> ${geocache.size}</p>
-                        <p><strong>Difficulty:</strong> ${geocache.difficulty}</p>
-                        <p><strong>Terrain:</strong> ${geocache.terrain}</p>
-                        <p><strong>Link:</strong> ${geocache.link || 'Not provided'}</p>
-                        <hr>
-                    `;
-                    geocacheListDiv.appendChild(geocacheItem);
-                });
-            })
-            .catch(error => console.error('Error:', error));
-    }
+    fetch('http://localhost:3000/upload', { // Beachten Sie die vollständige URL mit dem korrekten Port
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(geocacheData),
+    })
+    .then(response => response.text())
+    .then(message => {
+        alert(message);
+        getAllGeocaches();
+    })
+    .catch(error => console.error('Error:', error));
+}
 
     // Rufe beim Laden der Seite alle Geocaches ab und zeige sie an
     window.onload = function () {
