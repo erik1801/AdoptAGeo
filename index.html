@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geocache Management</title>
+    <title>AdoptAGeo</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -86,6 +86,46 @@
             background-color: #4d6f4d;
         }
 
+
+        #geocacheForm {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #252525; /* Überschriften in Schwarz */
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button.upload-btn {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button.upload-btn:hover {
+            background-color: #45a049;
+        }
+
+
     </style>
 </head>
 <body>
@@ -112,19 +152,66 @@
 </section>
 
 <section id="viewAllPage" class="subpage">
-    <h2>View all geocaches</h2>
-    <p>View all uploaded geocaches from the community.</p>
+    <h2>View All Geocaches</h2>
+    <p>Explore all geocaches uploaded by the community.</p>
 </section>
 
 <section id="uploadPage" class="subpage">
     <h2>Upload Geocache</h2>
     <p>Share your geocaching discoveries with the community.</p>
+    <form id="geocacheForm">
+        <div>
+            <label for="geocacheName"><strong>Geocachename:</strong></label>
+            <input type="text" id="geocacheName" name="geocacheName" required>
+        </div>
+    
+        <div>
+            <label for="geocacheCode"><strong>Geocachecode:</strong></label>
+            <input type="text" id="geocacheCode" name="geocacheCode" required>
+        </div>
+    
+        <div>
+            <label for="location"><strong>Ort:</strong></label>
+            <input type="text" id="location" name="location" required>
+        </div>
+    
+        <div>
+            <label for="coordinates"><strong>Koordinaten:</strong></label>
+            <input type="text" id="coordinates" name="coordinates" required>
+        </div>
+    
+        <div>
+            <label for="size"><strong>Größe:</strong></label>
+            <input type="text" id="size" name="size" required>
+        </div>
+    
+        <div>
+            <label for="difficulty"><strong>Schwierigkeit:</strong></label>
+            <input type="number" id="difficulty" name="difficulty" min="1" max="5" required>
+        </div>
+    
+        <div>
+            <label for="terrain"><strong>Gelände:</strong></label>
+            <input type="number" id="terrain" name="terrain" min="1" max="5" required>
+        </div>
+    
+        <div>
+            <label for="link"><strong>Link:</strong></label>
+            <input type="url" id="link" name="link">
+        </div>
+    
+        <div style="text-align: center;">
+            <button class="upload-btn" type="button" onclick="uploadGeocache()">Upload</button>
+        </div>
+    </form>
+    
+     
 </section>
 
 <section id="accountPage" class="subpage">
     <h2>User Account</h2>
     <p>Welcome to your account page!</p>
-    <button onclick="loginWithGitHub()">Login with GitHub</button>
+    <button onclick="loginWithGitHub()">Login with GitHub (Not Implemented)</button>
     <div id="userData">
         <!-- User data will be displayed here if logged in -->
     </div>
@@ -133,11 +220,17 @@
 <section id="newsPage" class="subpage">
     <h2>Latest News</h2>
     <p>Stay updated with the latest geocaching information.</p>
+    <img class="home-img" src="img/geocache-398016_1280.jpg" alt="Latest News Geocache Image">
 </section>
 
 <section id="documentationPage" class="subpage">
     <h2>Documentation</h2>
-    <p>Explore the documentation for our Geocache Management System.</p>
+    <h3>How to:</h3>
+    <p>Explore a nearby geocache that appeals to you. Copy the provided code<br> and visit the website mentioned in the description. 
+        Input the code into the designated field and submit <br>an adoption request. Following this, the owner of the cache will receive a notification to approve your inquiry. 
+        Once all steps are completed,<br> you should find the geocache listed as owned on your Geocaching.com profile.
+    </p>
+
 </section>
 
 <script>
