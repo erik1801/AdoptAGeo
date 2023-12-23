@@ -1,9 +1,15 @@
+<?php 
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AdoptAGeo</title>
+
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -211,11 +217,10 @@
 <section id="accountPage" class="subpage">
     <h2>User Account</h2>
     <p>Welcome to your account page!</p>
-    <button onclick="loginWithGitHub()">Login with GitHub (Not Implemented)</button>
-    <div id="userData">
-        <!-- User data will be displayed here if logged in -->
-    </div>
+    
+    
 </section>
+
 
 <section id="newsPage" class="subpage">
     <h2>Latest News</h2>
@@ -234,37 +239,6 @@
 </section>
 
 <script>
-    function uploadGeocache() {
-    const geocacheData = {
-        geocacheName: document.getElementById('geocacheName').value,
-        geocacheCode: document.getElementById('geocacheCode').value,
-        location: document.getElementById('location').value,
-        coordinates: document.getElementById('coordinates').value,
-        size: document.getElementById('size').value,
-        difficulty: document.getElementById('difficulty').value,
-        terrain: document.getElementById('terrain').value,
-        link: document.getElementById('link').value,
-    };
-
-    fetch('http://localhost:3000/upload', { // Beachten Sie die vollständige URL mit dem korrekten Port
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(geocacheData),
-    })
-    .then(response => response.text())
-    .then(message => {
-        alert(message);
-        getAllGeocaches();
-    })
-    .catch(error => console.error('Error:', error));
-}
-
-    // Rufe beim Laden der Seite alle Geocaches ab und zeige sie an
-    window.onload = function () {
-        getAllGeocaches();
-    };
     function showPage(pageId) {
         var subpages = document.getElementsByClassName('subpage');
         for (var i = 0; i < subpages.length; i++) {
@@ -272,10 +246,6 @@
         }
         var selectedPage = document.getElementById(pageId);
         selectedPage.classList.add('active');
-    }
-
-    function loginWithGitHub() {
-        alert("❗GitHub authentication: Not implemented yet (requires server-side logic).");
     }
 </script>
 
