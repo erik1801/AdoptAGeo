@@ -1,6 +1,18 @@
-<?php 
+<?php
+  // Verbindung zur Datenbank herstellen
 
+  include 'db_connection.php';
+  $conn = OpenCon();
+  echo "Connected Successfully";
+  CloseCon($conn);
+
+  // Funktion zum Geocache hochladen
+
+  // Geocachedaten aus der Datenbank abrufen
+
+  // Geocachedaten hochladen (wird von JavaScript aufgerufen)
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -155,6 +167,12 @@
     <h2>Welcome to the "adopt a geocache" System!</h2>
     <p>Discover the allure of geocaching: adopt hidden treasures with rich histories or share your own adventures by putting caches up for adoption!</p>
     <img class="home-img" src="img/Background.jpg" alt="Geocache Image">
+    <footer>
+        <div class="container">
+            <p>  || You can adopt a cache with the GC-code here: <a href="https://www.geocaching.com/adopt/">Geocaching.com/adopt</a> || </p>
+            <p>  || programming this since December 2023 ||</p>
+        </div>
+    </footer>
 </section>
 
 <section id="viewAllPage" class="subpage">
@@ -177,32 +195,17 @@
         </div>
     
         <div>
-            <label for="location"><strong>Ort:</strong></label>
-            <input type="text" id="location" name="location" required>
-        </div>
-    
-        <div>
-            <label for="coordinates"><strong>Koordinaten:</strong></label>
-            <input type="text" id="coordinates" name="coordinates" required>
-        </div>
-    
-        <div>
-            <label for="size"><strong>Größe:</strong></label>
+            <label for="size"><strong>size:</strong></label>
             <input type="text" id="size" name="size" required>
         </div>
     
         <div>
-            <label for="difficulty"><strong>Schwierigkeit:</strong></label>
-            <input type="number" id="difficulty" name="difficulty" min="1" max="5" required>
+            <label for="coordinates"><strong>coordinates:</strong></label>
+            <input type="text" id="coordinates" name="coordinates" required>
         </div>
     
         <div>
-            <label for="terrain"><strong>Gelände:</strong></label>
-            <input type="number" id="terrain" name="terrain" min="1" max="5" required>
-        </div>
-    
-        <div>
-            <label for="link"><strong>Link:</strong></label>
+            <label for="short description"><strong>short description:</strong></label>
             <input type="url" id="link" name="link">
         </div>
     
@@ -235,10 +238,19 @@
         Input the code into the designated field and submit <br>an adoption request. Following this, the owner of the cache will receive a notification to approve your inquiry. 
         Once all steps are completed,<br> you should find the geocache listed as owned on your Geocaching.com profile.
     </p>
+    <footer>
+        <div class="container">
+            <p>  || programming this since December 2023 ||</p>
+        </div>
+    </footer>
 
 </section>
 
+
+
 <script>
+
+    //Sup-Seiten werden versteckt
     function showPage(pageId) {
         var subpages = document.getElementsByClassName('subpage');
         for (var i = 0; i < subpages.length; i++) {
@@ -247,7 +259,13 @@
         var selectedPage = document.getElementById(pageId);
         selectedPage.classList.add('active');
     }
-</script>
 
+        // Funktion zum Hochladen des Geocaches (JavaScript)
+
+        // AJAX-Anfrage an den Server senden
+
+        // Seite neu laden, um die aktualisierten Geocaches anzuzeigen
+
+    </script>
 </body>
 </html>
