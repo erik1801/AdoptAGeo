@@ -26,9 +26,11 @@ Geocaching enthusiasts can leverage AdoptAGeo to either upload their geocaches f
 
 6. **Confirmation and Ownership**: Once approved, the adopted geocache will be officially listed under your ownership on your Geocaching.com profile.
 
-## Development Timeline
+## Development Timeline & status
 
 AdoptAGeo has been in development since December 2023 and is designed to provide the geocaching community a better experience.
+
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/a0684dfbe00b4f2da8d9fe450ebf8ba1)](https://app.codacy.com/gh/erik1801/AdoptAGeo/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 
 ---
 
