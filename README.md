@@ -6,6 +6,7 @@ AdoptAGeo is a platform tailored for geocachers, facilitating the seamless adopt
 
 Geocaching enthusiasts can leverage AdoptAGeo to either upload their geocaches for adoption or peruse available geocaches for potential adoption. The platform streamlines the process, ensuring a straightforward experience for both current and prospective cache owners.
 
+
 ## How It Works
 
 1. **Upload Geocaches**: Owners can upload geocaches they wish to release for adoption via the dedicated "Upload" tab. This feature enables users to contribute to the community by offering their caches for adoption.
@@ -30,7 +31,19 @@ Geocaching enthusiasts can leverage AdoptAGeo to either upload their geocaches f
 
 AdoptAGeo has been in development since December 2023 and is designed to provide the geocaching community a better experience.
 
+
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/a0684dfbe00b4f2da8d9fe450ebf8ba1)](https://app.codacy.com/gh/erik1801/AdoptAGeo/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+
+![Static Badge](https://img.shields.io/badge/status-in%20active%20development-t)
+
+![Static Badge](https://img.shields.io/badge/DB_status-not%20connected!-red)
+
+## Community
+
+Discord:
+
+![Discord](https://img.shields.io/discord/1057633368721850458)
+
 
 ---
 
