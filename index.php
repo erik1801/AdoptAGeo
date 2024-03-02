@@ -23,19 +23,23 @@
     <title>AdoptAGeo</title>
 
     <style>
+        .basicwriting{
+            color: #4F6F52
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #252525;
+            background-color: #D2E3C8;
             color: rgb(255, 255, 255);
         }
 
         header {
-            background-color: #558a55;
+            background-color: #4F6F52;
             padding: 20px 0;
             text-align: center;
-            color: #f7b87d;
+            color: #D2E3C8;
         }
 
         h1 {
@@ -44,14 +48,14 @@
         }
 
         nav {
-            background-color: #5d9b5d;
+            background-color: #739072;
             overflow: hidden;
         }
 
         nav a {
             float: left;
             display: block;
-            color: #ffffff;
+            color: #D2E3C8;
             text-align: center;
             padding: 14px 16px;
             text-decoration: none;
@@ -79,12 +83,11 @@
             display: block;
         }
 
-        .home-img{
-            width: 100%;
-            max-height: 500px;
-            object-fit: cover;
-            border-radius: 50px;
-            margin-top: 55px;
+        .home-img {
+            width: 500px;
+            height: 500px; /* Hier die gewünschte Höhe einstellen */
+            margin-top: 5px;
+            margin-left: 5px;
         }
 
 
@@ -143,6 +146,29 @@
             background-color: #45a049;
         }
 
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
 
     </style>
 </head>
@@ -164,25 +190,40 @@
 </nav>
 
 <section id="homePage" class="subpage active">
-    <h2>Welcome to the "adopt a geocache" System!</h2>
-    <p>Discover the allure of geocaching: adopt hidden treasures with rich histories or share your own adventures by putting caches up for adoption!</p>
-    <img class="home-img" src="img/Background.jpg" alt="Geocache Image">
+    <div class="basicwriting">
+        <h1>Welcome to the "adopt a geocache" System!</h1>
+        <h2>pictures of the week:</h2>
+    </div>
+
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="img/geocachingpic_01.jpg" alt="Geocache Image">
+        </div>
+        <div class="gallery-item">
+            <img src="img/Background.jpg" alt="Geocache Image">
+        </div>
+
+        <!-- Weitere Bilder hier einfügen -->
+    </div>
     <footer>
         <div class="container">
-            <p>  || You can adopt a cache with the GC-code here: <a href="https://www.geocaching.com/adopt/">Geocaching.com/adopt</a> || </p>
             <p>  || programming this since December 2023 ||</p>
         </div>
     </footer>
 </section>
 
 <section id="viewAllPage" class="subpage">
-    <h2>View All Geocaches</h2>
-    <div id="geocacheList"></div>
+    <div class="basicwriting">
+        <h2>View All Geocaches</h2>
+    </div>
 </section>
 
 <section id="uploadPage" class="subpage">
-    <h2>Upload Geocache</h2>
-    <p>Share your geocaching discoveries with the community.</p>
+    <div class="basicwriting">
+        <h2>Upload Geocache</h2>
+        <p>Share your geocaching discoveries with the community.</p>
+    </div>
+
     <form id="geocacheForm">
         <div>
             <label for="geocacheName"><strong>Geocachename:</strong></label>
@@ -220,26 +261,29 @@
 <section id="accountPage" class="subpage">
     <h2>User Account</h2>
     <p>Welcome to your account page!</p>
-    
-    
+
 </section>
 
 
 <section id="newsPage" class="subpage">
-    <h2>Latest News</h2>
-    <p>Stay updated with the latest geocaching information.</p>
-    <img class="home-img" src="img/geocache-398016_1280.jpg" alt="Latest News Geocache Image">
+    <div class="basicwriting">
+        <h2>Latest News</h2>
+        <p>Stay updated with the latest geocaching information.</p>
+    </div>
 </section>
 
 <section id="documentationPage" class="subpage">
-    <h2>Documentation</h2>
-    <h3>How to:</h3>
-    <p>Explore a nearby geocache that appeals to you. Copy the provided code<br> and visit the website mentioned in the description. 
-        Input the code into the designated field and submit <br>an adoption request. Following this, the owner of the cache will receive a notification to approve your inquiry. 
-        Once all steps are completed,<br> you should find the geocache listed as owned on your Geocaching.com profile.
-    </p>
+    <div class="basicwriting">
+        <h2>Documentation</h2>
+        <h3>How to:</h3>
+        <p>Explore a nearby geocache that appeals to you. Copy the provided code<br> and visit the website mentioned in the description. 
+            Input the code into the designated field and submit <br>an adoption request. Following this, the owner of the cache will receive a notification to approve your inquiry. 
+            Once all steps are completed,<br> you should find the geocache listed as owned on your Geocaching.com profile.
+        </p>
+    </div>
+
     <footer>
-        <div class="container">
+        <div class="basicwriting">
             <p>  || programming this since December 2023 ||</p>
         </div>
     </footer>
