@@ -1,19 +1,3 @@
-<?php
-  // Verbindung zur Datenbank herstellen
-
-  include 'db_connection.php';
-  $conn = OpenCon();
-  echo "Connected Successfully";
-  CloseCon($conn);
-
-  // Funktion zum Geocache hochladen
-
-  // Geocachedaten aus der Datenbank abrufen
-
-  // Geocachedaten hochladen (wird von JavaScript aufgerufen)
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,22 +8,22 @@
 
     <style>
         .basicwriting{
-            color: #4F6F52
+            color: #436850
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #D2E3C8;
+            background-color: #FBFADA;
             color: rgb(255, 255, 255);
         }
 
         header {
-            background-color: #4F6F52;
+            background-color: #12372A;
             padding: 20px 0;
             text-align: center;
-            color: #D2E3C8;
+            color: #FBFADA;
         }
 
         h1 {
@@ -48,7 +32,7 @@
         }
 
         nav {
-            background-color: #739072;
+            background-color: #436850;
             overflow: hidden;
         }
 
@@ -104,14 +88,14 @@
         }
 
         button:hover {
-            background-color: #4d6f4d;
+            background-color: #526D82;
         }
 
 
         #geocacheForm {
             max-width: 400px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 20px;<
             background-color: #f4f4f4;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -120,7 +104,7 @@
         label {
             display: block;
             margin-bottom: 8px;
-            color: #252525; /* Überschriften in Schwarz */
+            color: #436850; /* Überschriften in Schwarz */
         }
 
         input {
@@ -133,7 +117,7 @@
         }
 
         button.upload-btn {
-            background-color: #4caf50;
+            background-color: #12372A;
             color: #fff;
             padding: 10px 15px;
             font-size: 16px;
@@ -197,7 +181,7 @@
 
     <div class="gallery">
         <div class="gallery-item">
-            <img src="img/geocachingpic_01.jpg" alt="Geocache Image">
+            <img src="img/Geocaching_04.jpg" alt="Geocache Image">
         </div>
         <div class="gallery-item">
             <img src="img/Background.jpg" alt="Geocache Image">
